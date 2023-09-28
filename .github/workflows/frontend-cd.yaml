@@ -32,7 +32,7 @@ jobs:
 
       - name: Install Dependencies and Run Linting
         run: |
-          cd frontend
+          cd starter/frontend
           npm ci
           npm run lint
 
@@ -46,7 +46,7 @@ jobs:
 
       - name: Install Dependencies and Run Tests
         run: |
-          cd frontend
+          cd starter/frontend
           npm ci
           npm test
 
@@ -62,7 +62,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          cd frontend
+          cd starter/frontend
           docker build -t frontend:latest .
           docker tag frontend-app:latest frontend:${{ github.sha }}
 
